@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Generator</title>
+    <!-- Add your CSS links or stylesheets here -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the CV Generator</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Personal Information</h2>
+            <!-- Form to input personal information -->
+            <form action="{% url 'generate_cv' %}" method="post">
+                {% csrf_token %}
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address"><br><br>
+                
+                <!-- Add more fields for personal information -->
+                <!-- Example: Date of Birth, LinkedIn Profile, etc. -->
+                
+                <input type="submit" value="Generate CV">
+            </form>
+        </section>
+        
+        <!-- Display generated CV -->
+        <section>
+            <h2>Your Generated CV</h2>
+            <!-- Display the generated CV content here -->
+            {% if generated_cv %}
+                <div>
+                    <!-- Display the generated CV content -->
+                    {{ generated_cv }}
+                </div>
+            {% endif %}
+        </section>
+        
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            <!-- Add fields for education -->
+            <!-- Example: School, Degree, Dates, etc. -->
+        </section>
+        
+        <!-- Work Experience Section -->
+        <section>
+            <h2>Work Experience</h2>
+            <!-- Add fields for work experience -->
+            <!-- Example: Company, Position, Dates, Description, etc. -->
+        </section>
+        
+        <!-- Skills Section -->
+        <section>
+            <h2>Skills</h2>
+            <!-- Add fields for skills -->
+            <!-- Example: Programming languages, Tools, Soft skills, etc. -->
+        </section>
+        
+        <!-- Additional Sections (if needed) -->
+        <section>
+            <h2>Additional Information</h2>
+            <!-- Add any other relevant sections -->
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2023 Your CV Generator</p>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
