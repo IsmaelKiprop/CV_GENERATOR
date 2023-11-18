@@ -28,3 +28,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Additional JavaScript for interactivity
+// Example script, modify as needed
+
+// Smooth scrolling for anchor links
+$('a[href^="#"]').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  if (target.length) {
+    event.preventDefault();
+    $('html, body').animate({
+      scrollTop: target.offset().top
+    }, 1000);
+  }
+});
+
+ $(document).ready(function () {
+        // When a template button is clicked
+        $('.template-select').click(function () {
+            var selectedTemplate = $(this).data('template');
+            
+            // Redirect to the form page with the selected template as a query parameter
+            window.location.href = '/form/?template=' + selectedTemplate;
+        });
+    });

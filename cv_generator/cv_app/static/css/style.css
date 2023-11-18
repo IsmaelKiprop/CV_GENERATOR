@@ -55,3 +55,46 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #555;
 }
+ /* Additional CSS to style the form */
+/* Example styles, modify as needed */
+
+/* Header styles */
+.navbar {
+  padding: 10px;
+}
+
+.links-header {
+  margin-right: 20px;
+}
+
+.head-banner-text {
+  color: #f2920c;
+}
+
+/* Form input styles */
+.form-control {
+  border-radius: 10px;
+}
+
+.input-group-text {
+  background-color: #f2920c;
+  color: white;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Button styles */
+.btn-success {
+  background-color: #f2920c;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-success:hover {
+  background-color: #e18100;
+}
+
+/* Footer styles */
+.footer {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
